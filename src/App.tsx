@@ -1,7 +1,19 @@
 import React from "react";
 
-const oduBg = require("./imgs/odulum_background.png");
-// import oduBg from "./imgs/odulum_background.png"
+const oduBg = require("./imgs/still_odu_bg.png");
+const smol_google_play_badge = require("./imgs/google-play-badge/128x128.png");
+const big_google_play_badge = require("./imgs/google-play-badge/256x256.png");
+const smol_apple_badge = require("./imgs/app-store-badge/128x128.png");
+const big_apple_badge = require("./imgs/app-store-badge/256x256.png");
+const gif = require("./imgs/IMG_1216.gif");
+const screen_breakpoints = {
+  sm: 576,
+  md: 768,
+  lg: 992,
+  xl: 1200,
+};
+
+const screen_width = window.innerWidth;
 
 function App() {
   return (
@@ -14,7 +26,10 @@ function App() {
         height: "100vh",
         backgroundImage: `url(${oduBg})`,
         backgroundSize: "cover",
-        backgroundPositionX: "center",
+        // if phone screen rotatie background 90deg
+        backgroundRepeat: "no-repeat",
+
+        backgroundPosition: "center",
       }}
     >
       <div
@@ -23,20 +38,36 @@ function App() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "rgba(255, 255, 255, 0.5)",
-          padding: 20,
+          // backgroundColor: "rgba(255, 255, 255, 0.5)",
+          // padding: 20,
           borderRadius: 10,
         }}
       >
+        <div
+          style={{
+            height: 400,
+            width: 400,
+            backgroundImage: `url(${gif})`,
+            // backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+          }}
+        ></div>
         <button
           style={{
             width: 200,
             height: 50,
             fontSize: 20,
-            margin: 10,
+            marginBottom: 10,
             borderRadius: 10,
-            backgroundColor: "blue",
-            color: "white",
+            backgroundImage: `url(${
+              screen_width > screen_breakpoints.sm
+                ? big_google_play_badge
+                : smol_google_play_badge
+            })`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
             border: "none",
             cursor: "pointer",
           }}
@@ -47,17 +78,25 @@ function App() {
             );
           }}
         >
-          Google Play
+          {/* Google Playss */}
         </button>
         <button
           style={{
             width: 200,
             height: 50,
             fontSize: 20,
-            margin: 10,
+            marginBottom: 10,
+
             borderRadius: 10,
-            backgroundColor: "blue",
-            color: "white",
+            backgroundImage: `url(${
+              screen_width > screen_breakpoints.sm
+                ? big_apple_badge
+                : smol_apple_badge
+            })`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+
             border: "none",
             cursor: "pointer",
           }}
@@ -66,7 +105,7 @@ function App() {
             window.open("https://apps.apple.com/us/app/odulom/id6448789029");
           }}
         >
-          Apple Play
+          {/* Apple Play */}
         </button>
       </div>
     </div>
