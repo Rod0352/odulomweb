@@ -55,11 +55,12 @@ function App() {
         ></div>
         <button
           style={{
-            width: 200,
-            height: 50,
+            width: 400,
+            height: 100,
             fontSize: 20,
             marginBottom: 10,
             borderRadius: 10,
+            padding: 15,
             backgroundImage: `url(${
               screen_width > screen_breakpoints.sm
                 ? big_google_play_badge
@@ -68,6 +69,7 @@ function App() {
             backgroundPosition: "center",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
+
             border: "none",
             cursor: "pointer",
           }}
@@ -82,11 +84,11 @@ function App() {
         </button>
         <button
           style={{
-            width: 200,
-            height: 50,
+            width: 400,
+            height: 100,
             fontSize: 20,
             marginBottom: 10,
-
+            padding: 15,
             borderRadius: 10,
             backgroundImage: `url(${
               screen_width > screen_breakpoints.sm
