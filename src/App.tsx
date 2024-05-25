@@ -28,7 +28,8 @@ function App() {
         backgroundSize: "cover",
         // if phone screen rotatie background 90deg
         backgroundRepeat: "no-repeat",
-
+        position: "fixed",
+        width: "-webkit-fill-available",
         backgroundPosition: "center",
       }}
     >
@@ -57,6 +58,7 @@ function App() {
           style={{
             width: 400,
             height: 100,
+            maxWidth: "91%",
             fontSize: 20,
             marginBottom: 10,
             borderRadius: 10,
@@ -90,6 +92,7 @@ function App() {
             marginBottom: 10,
             padding: 15,
             borderRadius: 10,
+            maxWidth: "91%",
             backgroundImage: `url(${
               screen_width > screen_breakpoints.sm
                 ? big_apple_badge
