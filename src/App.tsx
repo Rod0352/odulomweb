@@ -3,8 +3,10 @@ import React from "react";
 const oduBg = require("./imgs/still_odu_bg.png");
 const smol_google_play_badge = require("./imgs/google-play-badge/128x128.png");
 const big_google_play_badge = require("./imgs/google-play-badge/256x256.png");
+const biggest_google_play_badge = require("./imgs/google-play-badge/512x512.png");
 const smol_apple_badge = require("./imgs/app-store-badge/128x128.png");
 const big_apple_badge = require("./imgs/app-store-badge/256x256.png");
+const biggest_apple_badge = require("./imgs/app-store-badge/512x512.png");
 const gif = require("./imgs/IMG_1216.gif");
 const screen_breakpoints = {
   sm: 576,
@@ -64,9 +66,11 @@ function App() {
             borderRadius: 10,
             padding: 15,
             backgroundImage: `url(${
-              screen_width > screen_breakpoints.sm
+              screen_width < screen_breakpoints.md
                 ? big_google_play_badge
-                : smol_google_play_badge
+                : screen_width < screen_breakpoints.lg
+                ? big_google_play_badge
+                : biggest_google_play_badge
             })`,
             backgroundPosition: "center",
             backgroundSize: "cover",
@@ -94,9 +98,11 @@ function App() {
             borderRadius: 10,
             maxWidth: "91%",
             backgroundImage: `url(${
-              screen_width > screen_breakpoints.sm
+              screen_width < screen_breakpoints.md
                 ? big_apple_badge
-                : smol_apple_badge
+                : screen_width < screen_breakpoints.lg
+                ? big_apple_badge
+                : biggest_apple_badge
             })`,
             backgroundPosition: "center",
             backgroundSize: "cover",
